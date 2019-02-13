@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>sign in</title>
+<style>
+body{
+background-image: url("game.png");
+}
+	</style>
+
+<link rel="stylesheet" type="text/css" href="Login.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script>
+
+function call(){
+    debugger;
+       var Email = document.getElementById("Email").value;
+        var Pass = document.getElementById("Pass").value;
+        localStorage.setItem("Email",Email.value);
+        localStorage.setItem("Pass",Pass.value);
+        console.log(localStorage.getItem("Username"));
+        console.log(localStorage.getItem("Password"));
+        $.ajax({
+            
+                    
+                    type:'GET',
+                
+            url: 'http://localhost:54411//api/Ticgames',
+            success:function(res){
+          // var getemail =res.User_Name;
+         // var getpwd =res.Password;
+                
+                if(Email.value == res.Email){
+                    if(Pass.value == res.Pass){
+                        alert("successfully login")
+                        window.location.href  = "toc.html";
+                           
+                        
+                }
+    
+}
+        }
+               });
+}
+     
+               
+    </script>
+
+</head>
+<body>
+
+<center>
+<h1><b>TIC TOC </b></h1>
+<h1><b>Sign in</b></h1>
+<br>
+<b>Email              :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" placeholder="Enter your Email" id="Email"/><br></b>
+<b>Password           :&nbsp;&nbsp;<input type="Password" placeholder="Enter your Password" id="Pass"/><br></b>
+
+<input type="checkbox" checked="checked" name="remember" style="margin-left:-20px;"> Remember me </input><br>
+<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+         <button type="submit" class="dropdown" onclick="call()">Sign in</button>
+  
+    </body>
+</html>
