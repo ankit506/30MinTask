@@ -1,0 +1,21 @@
+td{
+    width:100px;
+    height: 100px;
+   background: blue;
+   font-size: 40px;
+   text-align: center;
+   border-radius: 10px ;
+}
+table{
+    margin: 20px auto;
+    border-radius: 10px;
+    color: white;
+}
+tr td:hover { 
+  background: green; 
+  cursor: pointer; 
+}
+body{
+    background:orange;
+    background-image: url("game.png");
+}

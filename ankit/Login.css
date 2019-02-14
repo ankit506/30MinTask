@@ -57,10 +57,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-
-
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 200px) {
   .cancel, .signupbtn {
